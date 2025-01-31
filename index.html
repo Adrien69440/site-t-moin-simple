@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Carrousel Dynamique</title>
+  <link href="https://fonts.cdnfonts.com/css/graffiti-font" rel="stylesheet">
+  <link rel="stylesheet" href="style/style.css">
+</head>
+
+<body>
+
+  <!-- Navbar -->
+  <header class="navbar">
+    <div class="logo">
+      <a href="#">Mon Logo</a>
+    </div>
+    <nav class="nav-links">
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Services</a></li>
+        <li><a href="#">Portfolio</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </nav>
+    <div class="menu-toggle" onclick="toggleMenu()">
+      <i class="fas fa-bars"></i>
+    </div>
+  </header>
+
+  <!-- Carrousel -->
+  <div class="carousel-container">
+    <div class="carousel"></div>
+    <button class="prev" onclick="moveCarousel(-1)">&#10094; Précédent</button>
+    <button class="next" onclick="moveCarousel(1)">&#10095; Suivant</button>
+  </div>
+
+  <!-- Lightbox -->
+  <div id="lightbox" class="lightbox" onclick="closeLightbox()">
+    <img id="lightbox-img" src="" alt="Large view" />
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer-section">
+    <div class="footer-cta">
+      <div class="cta-container">
+        <div class="single-cta">
+          <i class="fas fa-map-marker-alt"></i>
+          <div class="cta-text">
+            <h4>Find us</h4>
+            <span>1223 avenue des Champs Elysée 75000 Paris</span>
+          </div>
+        </div>
+        <div class="single-cta">
+          <i class="fas fa-phone"></i>
+          <div class="cta-text">
+            <h4>Call us</h4>
+            <span>+33 01 02 03 04 05</span>
+          </div>
+        </div>
+        <div class="single-cta">
+          <i class="far fa-envelope-open"></i>
+          <div class="cta-text">
+            <h4>Mail us</h4>
+            <span>mail@info.com</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-content">
+      <div class="footer-widget-container">
+        <div class="footer-widget">
+          <div class="footer-logo">
+            <a href="index.html"><img src="" alt="logo"></a>
+          </div>
+          <div class="footer-text">
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut.</p>
+          </div>
+          <div class="footer-social-icon">
+            <span>Follow us</span>
+            <a href="#"><i class="fab fa-facebook-f facebook-bg"></i></a>
+            <a href="#"><i class="fab fa-twitter twitter-bg"></i></a>
+            <a href="#"><i class="fab fa-google-plus-g google-bg"></i></a>
+          </div>
+        </div>
+        <div class="footer-widget">
+          <div class="footer-widget-heading">
+            <h3>Useful Links</h3>
+          </div>
+          <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Services</a></li>
+            <li><a href="#">Portfolio</a></li>
+            <li><a href="#">Contact</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="copyright-area">
+      <div class="copyright-text">
+        <p>Copyright &copy; 2025, All Right Reserved</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/caroussel_gestion.js"></script>
+
+</body>
+
+</html>
