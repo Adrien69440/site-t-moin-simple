@@ -1,20 +1,20 @@
 /* General Styling */
 * {
     margin: 0;
-    padding: 0;
+    padding: 0px;
     box-sizing: border-box;
   }
   
   body {
     font-family: Arial, sans-serif;
     background-color: #2c2b2b;
-    display: flex;
+    /* display: flex;
     justify-content: center;
     align-items: center;
-    flex-direction: column;
-    height: 100vh;
-    overflow: hidden;
-    padding-top: 70px; /* To prevent content being hidden behind the fixed navbar */
+    flex-direction: column; */
+    height: auto;
+    /* overflow: hidden; */
+    padding-top: 70px; 
   }
   
   /* Navbar Styling */
@@ -29,7 +29,7 @@
     top: 0;
     left: 0;
     width: 100%;
-    z-index: 1000;
+    z-index: 1000; 
   }
   
   .navbar .logo a {
@@ -70,93 +70,300 @@
     display: none;
     font-size: 28px;
     cursor: pointer;
-    color: #fff;
+    color: #c0bebe;
   }
-  
+  /* style hero */
+.text_hero{
+background:	#f6e6d1;
+padding: 10px;
+text-align: center;
+border: #0056b3;
+border-radius: 25px;
+margin: 50px;
+
+}
+
   /* Carrousel Styling */
+.carousel-container {
+  position: relative;
+  width: 100%; /* Utilisation de 100% pour qu'il prenne toute la largeur disponible */
+  max-width: 1250px; /* Limite de largeur pour ne pas dépasser 1250px */
+  height: auto; /* Hauteur ajustable */
+  max-height: 600px; /* Limite de hauteur */
+  perspective: 1500px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 0;
+  margin-left: auto;
+  margin-right: auto; /* Centrage horizontal */
+  
+ 
+}
+
+.carousel {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  transition: transform 1s ease;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card {
+  width: 160px;
+  height: 240px;
+  position: absolute;
+  background-size: cover;
+  background-position: center;
+  color: white;
+  font-size: 24px;
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
+  align-items: center; /* Centrage du texte dans la carte */
+  border-radius: 10px;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+  transition: transform 1s ease;
+}
+
+button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0, 0, 0, 0.5);
+  border: none;
+  cursor: pointer;
+  font-size: 24px;
+  z-index: 10;
+}
+
+.prev,
+.next {
+  background-color: #999595;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+}
+
+.prev:hover,
+.next:hover {
+  background-color: #a7cffa;
+}
+
+button.prev {
+  left: 0;
+}
+
+button.next {
+  right: 0;
+}
+
+button:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* Lightbox Styling img grand format */
+.lightbox {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.lightbox img {
+  max-width: 90%;
+  max-height: 80%;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+}
+
+/* Responsive Styles */
+@media screen and (max-width: 2500px) {
   .carousel-container {
-    position: relative;
-    width: 850px;
+    width: 100%;
     height: 400px;
-    perspective: 1500px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: 100px; /* To account for fixed navbar */
   }
-  
-  .carousel {
-    position: relative;
-    width: 100%;
-    height: 100%;
-    transform-style: preserve-3d;
-    transition: transform 1s ease;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  
+
   .card {
-    width: 160px;
-    height: 240px;
-    position: absolute;
-    background-size: cover;
-    background-position: center;
-    color: white;
-    font-size: 24px;
-    font-weight: bold;
-    display: flex;
-    justify-content: center;
-    border-radius: 10px;
-    cursor: pointer;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
-    transition: transform 1s ease;
+    width: 120px;
+    height: 180px;
   }
-  
-  button {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background-color: rgba(0, 0, 0, 0.5);
-    border: none;
-    cursor: pointer;
-    font-size: 24px;
-    z-index: 10;
+
+  .prev,
+  .next {
+    font-size: 20px;
+    padding: 8px 16px;
   }
-  
-  button.prev {
-    left: 0;
-  }
-  
-  button.next {
-    right: 0;
-  }
-  
-  button:hover {
-    background-color: rgba(0, 0, 0, 0.8);
-  }
-  
-  /* Lightbox Styling */
-  .lightbox {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.8);
-    display: none;
-    justify-content: center;
-    align-items: center;
-    z-index: 1000;
-  }
-  
+
   .lightbox img {
     max-width: 90%;
-    max-height: 80%;
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+    max-height: 70%;
   }
-  
+}
+
+@media screen and (max-width: 480px) {
+  .carousel-container {
+    width: 100%;
+    height: 300px;
+  }
+
+  .card {
+    width: 100px;
+    height: 150px;
+  }
+
+  .prev,
+  .next {
+    font-size: 18px;
+    padding: 6px 12px;
+  }
+}
+
+  /* Section styles */
+.advertisers-service-sec {
+  padding: 5rem 1.5rem;
+  background-color: #f5f5f5;
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.section-header h2 {
+  font-weight: 700;
+  font-size: 2rem;
+  color: #333;
+}
+
+.section-header .b-class-secondary {
+  color: rgb(255, 23, 131);
+}
+
+.sec-icon {
+  display: inline-block;
+  position: relative;
+}
+
+.sec-icon::before, .sec-icon::after {
+  content: "";
+  position: absolute;
+  height: 1px;
+  background: #333333;
+  top: 60%;
+  margin-top: -5.5px;
+}
+
+.sec-icon::before {
+  left: -70px;
+  width: 50px;
+}
+
+.sec-icon::after {
+  right: -70px;
+  width: 50px;
+}
+
+/* Card container */
+.cards-wrapper {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 2rem;
+  justify-items: center;
+}
+
+/* Card styles */
+.service-card {
+  width: 100%;
+  height: 100%;
+  padding: 2em 1.5em;
+  border-radius: 5px;
+  box-shadow: 0 0 35px rgba(0, 0, 0, 0.12);
+  cursor: pointer;
+  background: #fff;
+  position: relative;
+  z-index: 2;
+  overflow: hidden;
+  transition: 0.5s;
+  text-align: center;
+}
+
+.service-card::after {
+  content: "";
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(#0dcaf0, rgb(255, 23, 131));
+  position: absolute;
+  left: 0%;
+  top: -98%;
+  z-index: -2;
+  transition: all 0.4s cubic-bezier(0.77, -0.04, 0, 0.99);
+}
+
+.service-card:hover::after {
+  top: 0%;
+}
+
+.service-card h3 {
+  font-size: 20px;
+  text-transform: capitalize;
+  font-weight: 600;
+  color: #1f194c;
+  margin: 1em 0;
+  z-index: 3;
+}
+
+.service-card p {
+  color: #575a7b;
+  font-size: 15px;
+  line-height: 1.6;
+  letter-spacing: 0.03em;
+  z-index: 3;
+}
+
+/* Icon wrapper */
+.icon-wrapper {
+  background-color: #2c7bfe;
+  color: #fff;
+  font-size: 30px;
+  height: 2.5em;
+  width: 2.5em;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  margin: 0 auto 1rem auto;
+  transition: 0.5s;
+  z-index: 3;
+}
+
+/* Hover effects */
+.service-card:hover h3 {
+  color: #ffffff;
+}
+
+.service-card:hover p {
+  color: #f0f0f0;
+}
+
+.service-card:hover .icon-wrapper {
+  background-color: #ffffff;
+  color: #0dcaf0;
+}
+
   /* Footer Styling */
   .footer-section {
     background-color: #151414;

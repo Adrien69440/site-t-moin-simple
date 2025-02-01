@@ -66,9 +66,5 @@ const data = [
     lightbox.style.display = "none";
   }
   
-  // Toggle menu for small screens
-  function toggleMenu() {
-    const navLinks = document.querySelector('.nav-links');
-    navLinks.classList.toggle('active');
-  }
+  
   
