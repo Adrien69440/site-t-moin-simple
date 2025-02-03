@@ -18,60 +18,89 @@
   }
   
   /* Navbar Styling */
-  .navbar {
+  /* Navbar Styling */
+.navbar {
+  background-color: #151414;
+  color: #fff;
+  padding: 15px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 100;
+}
+
+.navbar .logo a {
+  text-decoration: none;
+  color: #ff5e14;
+  font-size: 24px;
+  font-weight: 600;
+}
+
+.nav-links ul {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-links ul li {
+  margin-right: 20px;
+}
+
+.nav-links ul li:last-child {
+  margin-right: 0;
+}
+
+.nav-links ul li a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+.nav-links ul li a:hover {
+  color: #ff5e14;
+}
+
+.menu-toggle {
+  display: none;
+  font-size: 28px;
+  cursor: pointer;
+  color: #c0bebe;
+}
+
+@media screen and (max-width: 768px) {
+  .menu-toggle {
+    display: block; /* Show the hamburger icon on small screens */
+  }
+  .nav-links {
+    display: none; /* Hide the nav menu initially */
+  }
+  .nav-links.active {
+    display: flex; /* Show the menu when active */
+    flex-direction: column;
+    position: absolute;
     background-color: #151414;
-    color: #fff;
-    padding: 15px 20px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    position: fixed;
-    top: 0;
+    top: 60px;
     left: 0;
     width: 100%;
-    z-index: 100px; 
+    padding: 10px 0;
   }
+  .nav-links.active ul {
+    flex-direction: column;
+    align-items: center;
+  }
+  .nav-links.active li {
+    margin-bottom: 10px;
+  }
+}
+
   
-  .navbar .logo a {
-    text-decoration: none;
-    color: #ff5e14;
-    font-size: 24px;
-    font-weight: 600;
-  }
-  
-  .nav-links ul {
-    display: flex;
-    list-style: none;
-    margin: 0;
-    padding: 0;
-  }
-  
-  .nav-links ul li {
-    margin-right: 20px;
-  }
-  
-  .nav-links ul li:last-child {
-    margin-right: 0;
-  }
-  
-  .nav-links ul li a {
-    color: #fff;
-    text-decoration: none;
-    font-size: 18px;
-    font-weight: 500;
-    transition: color 0.3s;
-  }
-  
-  .nav-links ul li a:hover {
-    color: #ff5e14;
-  }
-  
-  .menu-toggle {
-    display: none;
-    font-size: 28px;
-    cursor: pointer;
-    color: #c0bebe;
-  }
   /* style hero */
 .text_hero{
 background:	#f6e6d1;
